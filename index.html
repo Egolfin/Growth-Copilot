@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DoorDash AM Growth Copilot">
+    <title>DoorDash AM Growth Copilot</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><b>↗</b><span><strong>Growth Copilot</strong><small>DoorDash AM</small></span></div>
+        <nav aria-label="Main navigation">
+          <button class="nav active" data-screen="home">⌂ <span>Home</span></button>
+          <button class="nav" data-screen="copilot">✦ <span>Growth Copilot</span></button>
+          <button class="nav" data-screen="objections">◈ <span>Objections</span></button>
+          <button class="nav" data-screen="campaigns">◫ <span>Campaigns</span></button>
+          <button class="nav" data-screen="playbook">▤ <span>Playbook</span></button>
+          <button class="nav" data-screen="analytics">◔ <span>Local Activity</span></button>
+          <button class="nav" data-screen="settings">⚙ <span>Settings</span></button>
+        </nav>
+        <p class="mode"><i></i> Mock AI · Local mode</p>
+      </aside>
+      <main class="main">
+        <header class="topbar"><div><p class="eyebrow">INTERNAL DECISION SUPPORT</p><h1 id="page-title">Good afternoon</h1></div><button id="live-call" class="outline">Start live call</button><div class="avatar">EG</div></header>
+
+        <section id="home" class="screen active">
+          <div class="hero"><div><p class="eyebrow">DOORDASH AM GROWTH COPILOT</p><h2>Find the next best growth conversation.</h2><p>Recommend the right strategy. Handle objections. Close with confidence.</p><button class="primary go-copilot">Start a merchant conversation</button></div><div class="hero-note"><span>START HERE</span><strong>Goal → strategy → talk track</strong><small>Source-grounded local MVP</small></div></div>
+          <div class="home-grid"><article><span>✦</span><h3>Recommended today</h3><p>Start with a merchant goal to generate a focused, documented recommendation.</p><button class="link go-copilot">Open Copilot →</button></article><article><span>◈</span><h3>Common objections</h3><p>Use a six-step consultative flow to validate, discover, respond, and close.</p><button class="link go-objections">Open objections →</button></article><article><span>◫</span><h3>Campaign quick start</h3><p>Explore visibility, conversion, acquisition, retention, and daypart options.</p><button class="link go-campaigns">Explore campaigns →</button></article></div>
+        </section>
+
+        <section id="copilot" class="screen">
+          <div class="section-heading"><div><p class="eyebrow">GROWTH COPILOT</p><h2>Merchant conversation workspace</h2><p>Select the outcome first. The recommendation engine will then prioritize one strategy.</p></div></div>
+          <div class="copilot-grid"><article class="card context"><p class="eyebrow">01 · DIAGNOSE</p><h3>Merchant context</h3><label>Demo merchant<select id="merchant"><option value="visibility">Maya's Noodle House</option><option value="new">Cedar Grill</option><option value="slow">The Lunch Counter</option><option value="aov">Taco Alma</option></select></label><label>Merchant goal</label><div id="goals" class="chips"></div><label>Investment comfort</label><div class="chips"><button class="chip budget active" data-budget="moderate">Moderate</button><button class="chip budget" data-budget="cautious">Very cautious</button><button class="chip budget" data-budget="growth">Growth focused</button></div><label><input id="capacity" type="checkbox"> Peak periods already full</label><p class="notice">✓ Use this as directional guidance only. Verify current eligibility and terms before presenting an offer.</p></article><article class="card strategy"><p class="eyebrow">02 · MATCH THE TOOL</p><div id="strategy"></div></article><article class="card response"><p class="eyebrow">03 · MAKE IT CONCRETE</p><h3>Talk track & objection</h3><div id="talk-track" class="talk-track"></div><label>Merchant objection<select id="objection-select"></select></label><div id="objection-response" class="objection-response"></div></article></div>
+        </section>
+
+        <section id="campaigns" class="screen"><div class="section-heading"><div><p class="eyebrow">CAMPAIGN LIBRARY</p><h2>Choose the right growth lever</h2><p>All offers must be verified for current availability, eligibility, and commercial terms.</p></div></div><div class="campaign-layout"><div id="campaign-list" class="list"></div><article id="campaign-detail" class="card detail"></article></div></section>
+
+        <section id="objections" class="screen"><div class="section-heading"><div><p class="eyebrow">OBJECTION PLAYBOOK</p><h2>Respond with clarity, not pressure</h2><p>Validate first, discover the concern, then choose the next best move.</p></div></div><div class="campaign-layout"><div id="objection-list" class="list"></div><article id="objection-detail" class="card detail"></article></div></section>
+
+        <section id="playbook" class="screen"><div class="section-heading"><div><p class="eyebrow">APPROVED PLAYBOOK</p><h2>The consultative growth conversation</h2></div></div><div class="framework"><article><b>01</b><h3>Diagnose</h3><p>Ask what the merchant wants to improve: visibility, new customers, larger baskets, repeat orders, or a slow daypart.</p></article><article><b>02</b><h3>Match the tool</h3><p>Recommend one primary solution based on the goal. Do not lead with every product.</p></article><article><b>03</b><h3>Make it concrete</h3><p>Use the campaign estimate, target audience, schedule, and budget to show how the plan could fit.</p></article><article><b>04</b><h3>Confirm next step</h3><p>Ask for a decision or a clearly defined follow-up using a consultative close.</p></article></div><div class="two-col"><article class="card"><p class="eyebrow">HIGH-IMPACT DISCOVERY</p><h3>Ask only what moves the conversation forward</h3><ol><li>Which outcome would make the biggest difference right now?</li><li>Which days or dayparts have capacity that you would like to fill?</li><li>Is your priority margin, moving an item, or easing a first order?</li><li>What investment level feels comfortable for a 30-day test?</li></ol><p class="source">Source: Merchant Growth Guide · p. 6</p></article><article class="card"><p class="eyebrow">SOURCE CONTROL</p><h3>Safe by design</h3><ul><li>Recommendations identify their source.</li><li>Expired offers are unavailable to recommend.</li><li>Confidential programs are excluded.</li><li>Unsupported questions return an insufficient-information state.</li><li>Terms and eligibility require verification.</li></ul></article></div></section>
+
+        <section id="analytics" class="screen"><div class="section-heading"><div><p class="eyebrow">DEMO / LOCAL ACTIVITY</p><h2>Practice and usage signals</h2><p>This is illustrative local activity only - not DoorDash merchant performance reporting.</p></div></div><div class="metrics"><article><span>126</span><small>Recommendations generated</small></article><article><span>42</span><small>Talk tracks copied</small></article><article><span>64</span><small>Objections reviewed</small></article><article><span>18</span><small>Next actions selected</small></article></div><div class="two-col"><article class="card chart"><p class="eyebrow">LOCAL ACTIVITY</p><h3>Top recommended campaigns</h3><div class="bar"><span>Sponsored Listings <b>38</b></span><i style="width:84%"></i></div><div class="bar"><span>Happy Hour <b>24</b></span><i style="width:53%"></i></div><div class="bar"><span>Try With Discount <b>19</b></span><i style="width:42%"></i></div></article><article class="card"><p class="eyebrow">INTERPRETATION</p><h3>Coach workflow quality</h3><p>The aim is not to maximize clicks. It is to identify the right merchant goal, use documented guidance, and close with a clear next action.</p></article></div></section>
+
+        <section id="settings" class="screen"><div class="section-heading"><div><p class="eyebrow">SETTINGS</p><h2>Source-safe by default</h2><p>Controls are saved only in this browser. No merchant information is sent to an external service.</p></div></div><div class="three-col"><article class="card"><h3>Experience</h3><div class="setting"><span><b>Show source references</b><small>Display document and page references.</small></span><input type="checkbox" checked></div><div class="setting"><span><b>Show advanced details</b><small>Display verification notes.</small></span><input type="checkbox"></div></article><article class="card"><h3>Data mode</h3><p class="mode-row">✓ Local demo data</p><p class="mode-row">✓ Mock AI</p><p class="muted">API-connected AI is reserved for a future approved integration.</p></article><article class="card"><h3>Source version</h3><p>Uploaded source set reviewed September 2026.</p><ul><li>Merchant Growth Guide</li><li>OUTREACH SCRIPTS - DoorDash AMs</li><li>MSM Canada - Movate Playbook</li></ul></article></div></section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
