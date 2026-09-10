@@ -1,0 +1,3 @@
+import type { CampaignId, Goal } from "./campaign";
+export type BudgetSensitivity = "high" | "medium" | "low";
+export type MerchantProfile = { id: string; merchantName: string; storeName: string; storeId?: string; cuisine?: string; locationCount?: number; currentCampaigns: CampaignId[]; hasSponsoredListings: boolean; hasPromotion: boolean; hasLoyalty: boolean; dashPass?: boolean; salesTrend?: "up" | "down" | "flat"; menuPhotoCoverage?: number; busiestDayparts?: string[]; slowestDayparts?: string[]; budgetSensitivity?: BudgetSensitivity; operationalConstraints: string[]; primaryGoal?: Goal; primaryChallenge?: string };

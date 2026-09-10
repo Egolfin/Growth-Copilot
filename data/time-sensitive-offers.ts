@@ -1,0 +1,5 @@
+export const timeSensitiveOffers = [
+  { id: "SL_LTO_2026", name: "Sponsored Listings LTO", startDate: "2026-08-01", endDate: "2026-08-21", status: "expired", eligibility: "Activation deadline passed", merchantFacingSummary: "Historical offer - unavailable", sourceDocument: "OUTREACH SCRIPTS - DoorDash AMs", sourcePage: 29, internalOnly: true, confidential: false, active: false },
+  { id: "COFUND_EXAMPLE", name: "Co-funding example", startDate: "2026-01-01", endDate: "2026-12-31", status: "verification_required", eligibility: "Active Sponsored Listings and verified program eligibility", merchantFacingSummary: "Eligibility must be verified before discussing any funding amount.", sourceDocument: "OUTREACH SCRIPTS - DoorDash AMs", sourcePage: 30, internalOnly: true, confidential: false, active: false },
+  { id: "NHL_GAME_NIGHT", name: "Confidential special program", startDate: "2026-09-29", endDate: "2027-06-15", status: "restricted", eligibility: "Restricted program", merchantFacingSummary: "Not available in this experience.", sourceDocument: "OUTREACH SCRIPTS - DoorDash AMs", sourcePage: 33, internalOnly: true, confidential: true, active: false }
+];
