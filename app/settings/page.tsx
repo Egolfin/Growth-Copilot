@@ -1,0 +1,16 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Check, Database, ShieldCheck, Sparkles } from "lucide-react";
+import { AppShell } from "@/components/layout/app-shell";
+import { PageHeader } from "@/components/common/page-header";
+
+export default function SettingsPage() {
+  const [showSources, setShowSources] = useState(true);
+  const [advanced, setAdvanced] = useState(false);
+  const [historical, setHistorical] = useState(false);
+  useEffect(() => { const raw = localStorage.getItem("growth-copilot-settings"); if (raw) { const stored = JSON.parse(raw); setShowSources(stored.showSources ?? true); setAdvanced(stored.advanced ?? false); setHistorical(stored.historical ?? false); } }, []);
+  useEffect(() => { localStorage.setItem("growth-copilot-settings", JSON.stringify({ showSources, advanced, historical })); }, [showSources, advanced, historical]);
+  return <main className="app"><AppShell /><section className="workspace"><PageHeader eyebrow="SETTINGS" title="Source-safe by default" description="Controls are stored only in this browser for the MVP. No merchant data is sent to an external service." /><div className="settings-layout"><article className="settings-group"><h2>Experience</h2><Setting title="Show source references" description="Display the approved document and page with campaign and objection guidance." enabled={showSources} onToggle={() => setShowSources(!showSources)} /><Setting title="Show advanced details" description="Display source-control and verification notes in the interface." enabled={advanced} onToggle={() => setAdvanced(!advanced)} /><Setting title="Show historical offers" description="Reveal historical records for internal reference only; they remain unavailable to recommend." enabled={historical} onToggle={() => setHistorical(!historical)} /></article><article className="settings-group"><h2>Data mode</h2><div className="mode-card selected"><Database size={20} /><div><strong>Local demo data</strong><p>Sample merchants and deterministic source-grounded rules.</p></div><Check size={16} /></div><div className="mode-card"><Sparkles size={20} /><div><strong>Mock AI</strong><p>Local deterministic rephrasing only. No API key required.</p></div></div><div className="mode-card disabled"><ShieldCheck size={20} /><div><strong>API-connected AI</strong><p>Reserved for a future approved server-side integration.</p></div></div></article><article className="settings-group"><h2>Source version</h2><p className="detail-lead">Uploaded source set reviewed September 2026.</p><ul className="safe-list"><li>Merchant Growth Guide</li><li>OUTREACH SCRIPTS - DoorDash AMs</li><li>MSM Canada - Movate Playbook</li></ul><div className="verification"><ShieldCheck size={17} /><span>Commercial terms, availability, and eligibility must always be verified in the approved process.</span></div></article></div></section></main>;
+}
+function Setting({ title, description, enabled, onToggle }: { title: string; description: string; enabled: boolean; onToggle: () => void }) { return <div className="setting-row"><div><strong>{title}</strong><p>{description}</p></div><button onClick={onToggle} className={enabled ? "toggle enabled" : "toggle"} aria-label={`Toggle ${title}`}><i /></button></div>; }
